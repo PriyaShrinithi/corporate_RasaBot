@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-job_role",
+      "2": "I-job_role",
+      "3": "L-job_role",
+      "4": "U-job_role",
+      "5": "B-recipient",
+      "6": "I-recipient",
+      "7": "L-recipient",
+      "8": "U-recipient",
+      "9": "B-writ_comm",
+      "10": "I-writ_comm",
+      "11": "L-writ_comm",
+      "12": "U-writ_comm",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-job_role": 1,
+      "I-job_role": 2,
+      "L-job_role": 3,
+      "U-job_role": 4,
+      "B-recipient": 5,
+      "I-recipient": 6,
+      "L-recipient": 7,
+      "U-recipient": 8,
+      "B-writ_comm": 9,
+      "I-writ_comm": 10,
+      "L-writ_comm": 11,
+      "U-writ_comm": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

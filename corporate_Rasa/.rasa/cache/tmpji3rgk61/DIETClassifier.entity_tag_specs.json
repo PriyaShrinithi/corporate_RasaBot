@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-writ_comm",
+      "2": "I-writ_comm",
+      "3": "L-writ_comm",
+      "4": "U-writ_comm",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-writ_comm": 1,
+      "I-writ_comm": 2,
+      "L-writ_comm": 3,
+      "U-writ_comm": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

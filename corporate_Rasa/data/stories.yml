@@ -1,0 +1,128 @@
+version: "3.1"
+
+stories:
+
+- story: Basic story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_select_writ_role
+  - action: role_writ_form
+  - action: utter_confirm_writ_role
+  - action: utter_enter_stanza
+
+- story: Basic story that uses form to generate translation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_select_writ_role
+  - action: role_writ_form
+  - active_loop: role_writ_form
+  - slot_was_set:
+    - requested_slot: job_role
+  - intent: set_writ_role
+    entities:
+    - job_role: manager
+    - writ_comm: mail
+    - job_role: manager
+    - writ_comm: mail
+  - slot_was_set:
+    - job_role: manager
+  - slot_was_set:
+    - writ_comm: mail
+  - action: role_writ_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_writ_role
+  - action: utter_enter_stanza
+  - intent: stanza
+  - action: action_generate_translation
+  - action: utter_goodbye
+
+- story: Basic story to check case sensitivity in form to generate translation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_select_writ_role
+  - action: role_writ_form
+  - active_loop: role_writ_form
+  - slot_was_set:
+    - requested_slot: job_role
+  - intent: set_writ_role
+    entities:
+    - job_role: manager
+    - writ_comm: mail
+    - job_role: MANAGER
+    - writ_comm: MAIL
+  - slot_was_set:
+    - job_role: MANAGER
+  - slot_was_set:
+    - writ_comm: MAIL
+  - action: role_writ_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_writ_role
+  - action: utter_enter_stanza
+  - intent: stanza
+  - action: action_generate_translation
+  - action: utter_goodbye
+
+- story: Basic story that uses form to generate translation post recipient for mail story
+  steps:
+  - slot_was_set:
+    - requested_slot: job_role
+  - slot_was_set:
+    - job_role: manager
+  - slot_was_set:
+    - requested_slot: writ_comm
+  - slot_was_set:
+    - writ_comm: mail
+  - slot_was_set:
+    - requested_slot: recipient
+  - slot_was_set:
+    - recipient: subordinate
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_confirm_writ_role
+  - action: utter_enter_stanza
+  - intent: stanza
+  - action: action_generate_translation
+  - action: utter_goodbye
+
+- story: Basic story that uses a differnt starting point
+  steps:
+  - slot_was_set:
+    - requested_slot: job_role
+  - slot_was_set:
+    - job_role: team lead
+  - slot_was_set:
+    - requested_slot: writ_comm
+  - intent: set_writ_role
+    entities:
+    - writ_comm: mail
+    - writ_comm: mail
+  - slot_was_set:
+    - writ_comm: mail
+  - action: role_writ_form
+  - active_loop: role_writ_form
+  - slot_was_set:
+    - writ_comm: mail
+  - slot_was_set:
+    - requested_slot: recipient
+  - intent: set_writ_role
+    entities:
+    - recipient: superior
+    - recipient: superior
+  - slot_was_set:
+    - recipient: superior
+  - action: role_writ_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_writ_role
+  - action: utter_enter_stanza
+  - intent: stanza
+  - action: action_generate_translation
+  - action: utter_goodbye

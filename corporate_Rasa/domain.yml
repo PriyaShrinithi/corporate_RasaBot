@@ -1,0 +1,65 @@
+version: '3.1'
+intents:
+- bot_challenge
+- goodbye
+- greet
+- set_writ_role
+- stanza
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_goodbye:
+  - text: I was glad to be of service. Have a Nice Day. Bye
+  utter_iamabot:
+  - text: I am Corporate Rasa. Your personal Corporate translator.
+  utter_ask_job_role:
+  - text: Select one of the given job roles [manager, team lead, employee].
+  utter_ask_writ_comm:
+  - text: Select one of the given the modes of written communication [mail, text message, form].
+  utter_select_writ_role:
+  - text: Select the job role [manager, team lead, employee] and the mode of written communication [mail, text message, form].
+  utter_confirm_writ_role:
+  - text: I will select the job role {job_role} and mode of written communication {writ_comm}.
+  utter_enter_stanza:
+  - text: Enter the text that should be translated to a role appropriate corporate lingo.
+  utter_ask_recipient:
+  - text: Enter a valid recipient for the {writ_comm} - [peer, subordinate, superior].
+actions:
+- utter_enter_stanza
+- action_generate_translation
+- utter_select_writ_role
+- utter_goodbye
+- utter_confirm_writ_role
+- utter_greet
+entities:
+- recipient
+- job_role
+- writ_comm
+forms:
+  role_writ_form:
+    required_slots:
+    - job_role
+    - writ_comm
+    - recipient
+slots:
+  job_role:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: job_role
+  writ_comm:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: writ_comm
+  recipient:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: recipient
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

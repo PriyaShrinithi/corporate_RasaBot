@@ -1,0 +1,14 @@
+[
+  {
+    "name": "job_role",
+    "pattern": "(\\bmanager\\b|\\bteam\\ lead\\b|\\btl\\b|\\bemployee\\b)"
+  },
+  {
+    "name": "writ_comm",
+    "pattern": "(\\bmail\\b|\\bemail\\b|\\btext\\b|\\btext\\ message\\b|\\bform\\b|\\bsms\\b|\\bdm\\b|\\bdirect\\ message\\b)"
+  },
+  {
+    "name": "recipient",
+    "pattern": "(\\bpeer\\b|\\bcolleague\\b|\\bsuperior\\b|\\bsubordinate\\b|\\bcoworker\\b)"
+  }
+]

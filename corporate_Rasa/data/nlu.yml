@@ -1,0 +1,152 @@
+version: "3.1"
+nlu:
+- intent: set_writ_role
+  examples: |
+    - I am [team lead] (job_role)
+    - I am [manager] (job_role)
+    - I am [employee] (job_role)
+    - [team lead] (job_role)
+    - [manager] (job_role)
+    - [employee] (job_role)
+    - I am a [team lead] (job_role)
+    - I am a [manager] (job_role)
+    - I am an [employee] (job_role)
+    - My role is that of an [employee] (job_role)
+    - [manager] is my job role (job_role)
+    - I would like the text to be written in the form of a [text message] (writ_comm)
+    - Give it to me as a [text message] (writ_comm)
+    - Give it to me as a [mail] (writ_comm)
+    - Give it to me as a [form] (writ_comm)
+    - [text message] (writ_comm)
+    - [mail] (writ_comm)
+    - [form] (writ_comm)
+    - I prefer [mail] (writ_comm)
+    - I am [team lead](job_role) and want to write a [mail](writ_comm) to [superior](recipient)
+    - I am [manager](job_role) and want to write a [mail](writ_comm) to [subordinate](recipient)
+    - I am [employee](job_role) and want to write a [mail](writ_comm) to [peer](recipient)
+    - [Manager](job_role) by profession, I want to send a [mail](writ_comm) to my [superior](recipient)
+    - My job is [manager](job_role) and I prefer [email](writ_comm) to my [superior](recipient)
+    - I'm an [employee](job_role) and want to send a [mail](writ_comm) to my [superior](recipient)
+    - I am [team lead](job_role) and need to send a [mail](writ_comm) to my immediate [superior](recipient)
+    - [Manager](job_role) here, I want to send a [mail](writ_comm) to my close [peer](recipient)
+    - I am [team lead](job_role) and prefer [mail](writ_comm) my immediate [subordinate](recipient)
+    - I work as a [manager](job_role) and need to send a [mail](writ_comm) intended for a [peer](recipient)
+    - My role is [employee](job_role) and I'd like to write a [mail](writ_comm) intended to a [subordinate](recipient)
+    - I'm a [team lead](job_role) and prefer [mail](writ_comm) to write to [superior](recipient)
+    - I am [manager](job_role) and want to send a [mail](writ_comm) to [subordinate](recipient)
+    - My job title is [team lead](job_role) and I need to send a [mail](writ_comm) to [subordinate](recipient)
+    - I am [employee](job_role) and prefer [mail](writ_comm) my [subordinate](recipient)
+    - [sms] (writ_comm)
+    - [xyz] (writ_comm)
+    - [sms] (recipient)
+    - [xyz] (recipient)
+    - [subordinate] (recipient)
+    - [peer] (recipient)
+    - [superior] (recipient)
+    - Write this [mail](writ_comm) to [subordinate] (recipient)
+    - Write this [mail](writ_comm) to [peer] (recipient)
+    - Write this [mail](writ_comm) to [superior] (recipient)
+    - I prefer [male] (writ_comm)
+    - I am [team lede] (job_role) and want to write a [m](writ_comm)
+    - I am [teme lead] (job_role) and want to write a [dm](writ_comm)
+    - I am [tl] (job_role) and want to write a [HL](writ_comm)
+    - I am [iou] (job_role) and want to write a [mail](writ_comm)
+    - I am a [team lede] (job_role) and want to write a [m](writ_comm)
+    - I am a [teme lead] (job_role) and want to write a [dm](writ_comm)
+    - I am an [tl] (job_role) and want to write a [HL](writ_comm)
+    - I am the [iou] (job_role) and want to write a [mail](writ_comm)
+    - I am a [novo scotia] (job_role) and want to write a [message](writ_comm)
+    - I am [manager] (job_role) and want to write a [kill](writ_comm)
+    - I am [nani] (job_role) and want to write a [mail](writ_comm)
+    - I am [king] (job_role) and want to write a [dulq](writ_comm)
+    - I am [cruise] (job_role) and want to write a [ship](writ_comm)
+    - [x] (job_role)
+    - [y] (job_role)
+    - [jikilo] (job_role)
+    - [lalalava] (job_role)
+    - My role is that of an [s] (job_role)
+    - [silo] is my job role (job_role)
+    - Give it to me as a [text] (writ_comm)
+    - Give it to me as a [email] (writ_comm)
+    - Give it to me as a [k] (writ_comm)
+    - [mail][{"entity": "writ_comm"}, {"entity": "writ_comm"}]
+    - [superior][{"entity": "recipient"}, {"entity": "recipient"}]
+    - [team lead](job_role)
+- intent: stanza
+  examples: |
+    - I am so and so and i would to tell you about a grievance that i am currently experiencing in the work place.
+    - The quick brown fox jumps over the lazy dog.
+    - Today is a beautiful day with clear skies and sunshine.
+    - The cat sat on the mat and licked its paws.
+    - I enjoy listening to music while taking a long walk in the park.
+    - Learning new things is always an exciting adventure.
+    - The aroma of freshly baked bread fills the room.
+    - In the distance, I can hear the sound of waves crashing against the shore.
+    - Life is like a box of chocolates; you never know what you're gonna get.
+    - The stars twinkle brightly in the night sky, illuminating the darkness.
+    - Time flies when you're having fun, but it also heals all wounds.
+    - If DIET (Dual Intent and Entity Transformer) isn't finding entities, there could be a few reasons for this:Training Data,  Entity Annotations, Pipeline Configuration, Training Parameters, Evaluation Metrics. By addressing these factors and potentially experimenting with different configurations, you can improve DIET's ability to extract entities accurately.
+    - Automation is revolutionizing industries, streamlining processes, and reducing costs. By replacing manual tasks with efficient technologies, businesses boost productivity while cutting expenses. This shift empowers employees to focus on higher-value work, driving innovation and competitiveness in today's fast-paced market landscape.
+    - Your hope is my hope. Indeed, your hope is my hope! It's a beautiful sentiment of solidarity and shared aspirations. Absolutely! It's wonderful to resonate with such positive and uplifting sentiments. We're on the same wavelength when it comes to hope and positivity!
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - how are you?
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - Corporate
+    - Rasa
+    - Who are you?
+    - virtual assistant
+    - assistant
+- lookup: job_role
+  examples: |
+    - manager
+    - team lead
+    - tl
+    - employee
+- lookup: writ_comm
+  examples: |
+    - mail
+    - email
+    - text
+    - text message
+    - form
+    - sms
+    - dm
+    - direct message
+- lookup: recipient
+  examples: |
+    - peer
+    - colleague
+    - superior
+    - subordinate
+    - coworker

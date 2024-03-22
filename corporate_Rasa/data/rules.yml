@@ -1,0 +1,31 @@
+version: "3.1"
+
+rules:
+
+- rule: Activate rasa form to write job role and written communication mode
+  steps:
+  - intent: set_writ_role
+  - action: role_writ_form
+  - active_loop: role_writ_form
+
+- rule: Submit rasa form after writing job role and written communication mode
+  condition:
+  - active_loop: role_writ_form
+  steps:
+  - action: role_writ_form
+  - active_loop: null
+  - action: utter_confirm_writ_role
+  - action: utter_enter_stanza
+  - intent: stanza
+  - action: action_generate_translation
+  - action: utter_goodbye
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
